@@ -5,6 +5,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Befor Start
 run on cmd compand "npm install" to download packages.
 the cmd url must contain last file path where package.json file saved.
+## Tostart Start
+to Start run on cmd compand "ng serve" to project last path.
+to Start unit test run on cmd compand "ng test" to project last path.
+the cmd url must contain last file path where package.json file saved.
 
 ## Development server
 
