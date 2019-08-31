@@ -1,0 +1,29 @@
+@import '../../../assets/scss/variables.scss';
+@import '../../../assets/scss/mixins.scss';
+
+.content-box {
+  border-radius: 15px;
+  @include box-shadow($sb-center-wide-black);
+  width: 500px;
+  min-height: 500px;
+  background-color: #ffffff;
+  overflow: hidden;
+  .box-header {
+    background-color: $color-gray-very-light;
+    text-align: center;
+    .company-logo {
+      width: 350px;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .content-box {
+    width: 95%;
+    min-width: 290px;
+    min-height: 290px;
+    .company-logo {
+      width: 90%;
+    }
+  }
+}

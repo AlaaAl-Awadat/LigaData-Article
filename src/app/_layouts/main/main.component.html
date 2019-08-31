@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div
+    class="header d-flex flex-md-nowrap flex-wrap justify-content-md-between justify-content-center align-items-center"
+  >
+    <div class="px-2 mb-2">
+      <img src="./assets/icons/user.jpg" class="w-65px border-2px border-radius-100" />
+    </div>
+    <div class="px-2 mb-2">
+      <label class="bg-gray-very-light border-radius-30px py-2 px-3 mb-0 mw-150px">
+        Welcome {{ currentUser?.firstName + ' ' + currentUser?.lastName }} !!!
+      </label>
+    </div>
+    <div>
+      <button type="button" mat-icon-button class="mx-2 mb-2">
+        <span class="mdi mdi-bell-ring mdi-24px"></span>
+      </button>
+      <button type="button" mat-icon-button class="mx-2 mb-2">
+        <span class="mdi mdi-email-multiple mdi-24px"></span>
+      </button>
+      <button type="button" mat-icon-button class="mx-2 mb-2" (click)="signout()">
+        <span class="mdi mdi-logout mdi-24px"></span>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <div
+    class="footer d-flex flex-md-nowrap flex-wrap justify-content-md-between justify-content-center align-items-center"
+  >
+    <img src="assets/logos/ligadata-black.png" style="width: 200px" class="mb-2 mx-2" />
+    <label class="text-uppercase fz-14px mx-2">&copy; 2019 alaa al-awadat all right reserved</label>
+  </div>
+</div>

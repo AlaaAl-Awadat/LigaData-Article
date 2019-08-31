@@ -1,0 +1,68 @@
+<div class="col-12 px-0 h-100 box-white-shadow">
+  <div class="col-12 p-2 bg-green c-white mb-3 border-radius-t-15px">
+    <label class="mb-0 font-weight-bold">{{ article ? 'Edit' : 'Add' }} Article</label>
+  </div>
+  <form novalidate [formGroup]="mainForm" class="col-12 px-0">
+    <div class="col-12 px-2 row mx-0">
+      <div class="col-md-6 px-2">
+        <mat-form-field class="mb-2">
+          <input type="text" placeholder="Title" matInput formControlName="title" />
+          <span matSuffix class="mdi mdi-subtitles mdi-30px"></span>
+          <mat-error *ngIf="mf('title').hasError('maxlength') && !mf('title').hasError('required')">
+            Max Length 50 Characters
+          </mat-error>
+          <mat-error *ngIf="mf('title').hasError('required')"> Title is <strong>required</strong> </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 px-2">
+        <mat-form-field class="mb-2">
+          <input matInput [matDatepicker]="datePicker" placeholder="Choose a date" formControlName="date" />
+          <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+          <mat-datepicker #datePicker></mat-datepicker>
+          <mat-error *ngIf="mf('date').hasError('required')"> Date is <strong>required</strong> </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-12 px-2 mb-3">
+        <div class="col-12">
+          <label>Content</label>
+        </div>
+        <angular-editor formControlName="content"></angular-editor>
+        <mat-error class="fz-14px" *ngIf="mf('content').hasError('required')">
+          Content is <strong>required</strong>
+        </mat-error>
+      </div>
+      <div class="col-12 px-2 mb-3 d-flex justify-content-center">
+        <div class="uploader" appClickStopPropagation (click)="upload()">
+          <span *ngIf="!mf('image').value" class="uploader-text">Click To Upload!!!</span>
+          <img *ngIf="mf('image').value" [src]="mf('image').value" class="uploader-image" />
+          <button
+            type="button"
+            *ngIf="mf('image').value"
+            mat-icon-button
+            appClickStopPropagation
+            class="mat-icon-buttons absoluting"
+            (click)="removeImage()"
+          >
+            <span class="mdi mdi-close mdi-24px"></span>
+          </button>
+        </div>
+      </div>
+      <input
+        type="file"
+        #uploaderInput
+        accept="image/*"
+        formControlName="file"
+        class="d-none"
+        (change)="fileChange($event.target.files)"
+      />
+    </div>
+    <div class="col-12 px-2 pt-2 border-radius-b-15px bg-gray-very-light d-flex justify-content-center">
+      <button type="submit" mat-button class="mat-buttons saving mx-2 mb-2" (click)="saving()">
+        <span>Save</span>
+      </button>
+      <button type="button" mat-button class="mat-buttons cancel mx-2 mb-2" (click)="cancel()">
+        <span>Cancel</span>
+      </button>
+    </div>
+  </form>
+</div>

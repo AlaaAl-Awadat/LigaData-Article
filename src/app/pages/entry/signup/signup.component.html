@@ -1,0 +1,72 @@
+<div class="col-12 px-2">
+  <form novalidate [formGroup]="mainForm">
+    <div class="col-12 px-0 mb-3">
+      <div class="col-12 border-bottom mb-2">
+        <label class="font-weight-bold">User Information</label>
+      </div>
+      <div class="col-12 px-2">
+        <mat-form-field class="mb-2">
+          <input type="text" placeholder="First Name" matInput formControlName="firstName" />
+          <span matSuffix class="mdi mdi-account-badge-horizontal mdi-30px"></span>
+          <mat-error *ngIf="mf('firstName').hasError('maxlength') && !mf('firstName').hasError('required')">
+            Max Length 50 Characters
+          </mat-error>
+          <mat-error *ngIf="mf('firstName').hasError('required')"> First Name is <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" placeholder="Last Name" matInput formControlName="lastName" />
+          <span matSuffix class="mdi mdi-account-badge-horizontal mdi-30px"></span>
+          <mat-error *ngIf="mf('lastName').hasError('maxlength') && !mf('lastName').hasError('required')">
+            Max Length 50 Characters
+          </mat-error>
+          <mat-error *ngIf="mf('lastName').hasError('required')"> Last Name is <strong>required</strong> </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-12 px-0">
+      <div class="col-12 border-bottom mb-2">
+        <label class="font-weight-bold">Account Information</label>
+      </div>
+      <div class="col-12 px-2">
+        <mat-form-field class="mb-2">
+          <input type="text" placeholder="Username (Email)" matInput formControlName="username" />
+          <span matSuffix class="mdi mdi-account mdi-30px"></span>
+          <mat-error *ngIf="mf('username').hasError('pattern') && !mf('username').hasError('required')">
+            Please enter a valid username (Email)
+          </mat-error>
+          <mat-error *ngIf="mf('username').hasError('required')"> Username is <strong>required</strong> </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-12 px-2 mb-2" formGroupName="passwordMatch">
+        <mat-form-field class="mb-2">
+          <input type="password" placeholder="Password" matInput formControlName="password" />
+          <span matSuffix class="mdi mdi-lock mdi-30px"></span>
+          <mat-error
+            *ngIf="
+              mfgc('passwordMatch', 'password').hasError('minlength') &&
+              !mfgc('passwordMatch', 'password').hasError('required')
+            "
+          >
+            Please enter a valid password
+          </mat-error>
+          <mat-error *ngIf="mfgc('passwordMatch', 'password').hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="password" placeholder="Confirm Password" matInput formControlName="confirmPassword" />
+          <span matSuffix class="mdi mdi-account mdi-30px"></span>
+          <mat-error *ngIf="mfgc('passwordMatch', 'confirmPassword').hasError('required')">
+            Confirm Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="mfg('passwordMatch').hasError('notMatch')"> Password <strong>not matched</strong> </mat-error>
+      </div>
+    </div>
+    <div class="text-center px-2 mb-2">
+      <button type="submit" mat-button class="mat-buttons saving mx-2 mb-2" (click)="signup()">
+        <span>Signup</span>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,209 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/variables.scss';
+@import './assets/scss/mixins.scss';
+
+html,
+body,
+.wrapper {
+  height: 100%;
+}
+html {
+  overflow-y: hidden;
+}
+body {
+  background-color: $body-background-color;
+  color: $color-gray;
+  font-size: 18px;
+}
+.wrapper {
+  overflow-y: auto;
+}
+.container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  min-height: calc(100% - 182px);
+}
+button {
+  outline: none !important;
+  font-weight: bold !important;
+}
+// Start Bootstrap Override
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #82bcfa;
+}
+.table {
+  thead th {
+    font-weight: bold;
+  }
+  thead th,
+  tbody td {
+    padding: 7.5px !important;
+    vertical-align: inherit;
+    text-align: center;
+    font-size: 16px;
+  }
+  .mat-sort-header-container {
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+// End Bootstrap Override
+// Start NGX-Bootstrap Override
+.modal-clear {
+  .modal-content {
+    background-color: transparent;
+    border: none;
+  }
+}
+// End NGX-Bootstrap Override
+// Start Mat Override
+.mat-form-field {
+  width: 100%;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $color-green;
+}
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: $color-green;
+}
+// End Mat Override
+// Start Mat Icons
+.mdi-bold::before {
+  font-weight: bold;
+}
+.mdi-30px::before {
+  font-size: 30px;
+}
+// End Mat Icons
+// Start Mat Buttons
+.mat-buttons {
+  min-width: 100px !important;
+  border-radius: 5px !important;
+  &.saving {
+    background-color: $color-green;
+  }
+  &.cancel {
+    background-color: $color-red;
+  }
+  &.saving,
+  &.cancel {
+    color: #ffffff;
+    font-size: 18px;
+  }
+}
+.mat-icon-buttons {
+  &.add {
+    color: #ffffff;
+    background-color: $color-green;
+  }
+  &.absoluting {
+    color: $color-red;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+  }
+}
+// End Mat Buttons
+// Start Text Editor Override
+.angular-editor-textarea {
+  min-height: 200px !important;
+}
+// End Text Editor Override
+// === Start Customization
+// Start Uploader
+.uploader {
+  position: relative;
+  min-width: 270px;
+  min-height: 200px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 300px;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: $color-gray-very-light;
+  cursor: pointer;
+  .uploader-text {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .uploader-image {
+    max-width: 270px;
+    border-radius: 5px;
+  }
+}
+// End Uploader
+// Start Boxes
+.box-white-shadow {
+  @include box-shadow($sb-center-wide-black);
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+// End Boxes
+// === End Customization
+// Start Font Size
+.fz-14px {
+  font-size: 14px;
+}
+.fz-18px {
+  font-size: 18px;
+}
+// End Font Size
+// Start Cursor
+.cursor-pointer {
+  cursor: pointer;
+}
+// End Cursor
+// Start Border
+.border-radius-100 {
+  border-radius: 100%;
+}
+.border-radius-30px {
+  border-radius: 30px;
+}
+.border-radius-t-15px {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.border-radius-b-15px {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.border-2px {
+  border: $color-gray-middle solid 2px;
+}
+// End Border
+// Start Width
+.w-65px {
+  width: 65px;
+}
+.w-50px {
+  width: 50px;
+}
+.mw-150px {
+  min-width: 150px;
+}
+// End Width
+// Start Colors
+.c-violet {
+  color: $color-violet;
+}
+.c-white {
+  color: #ffffff;
+}
+.bg-green {
+  background-color: $color-green;
+}
+.bg-gray-very-light {
+  background-color: $color-gray-very-light;
+}
+// End Colors

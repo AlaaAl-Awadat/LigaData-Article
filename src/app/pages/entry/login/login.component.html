@@ -1,0 +1,33 @@
+<div class="col-12 px-2">
+  <form novalidate [formGroup]="mainForm">
+    <div class="col-12 px-2">
+      <mat-form-field class="mb-3">
+        <input type="text" placeholder="Username (Email)" matInput formControlName="username" />
+        <span matSuffix class="mdi mdi-account mdi-30px"></span>
+        <mat-error *ngIf="mf('username').hasError('pattern') && !mf('username').hasError('required')">
+          Please enter a valid username (Email)
+        </mat-error>
+        <mat-error *ngIf="mf('username').hasError('required')"> Username is <strong>required</strong> </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mb-3">
+        <input type="password" placeholder="Password" matInput formControlName="password" />
+        <span matSuffix class="mdi mdi-lock mdi-30px"></span>
+        <mat-error *ngIf="mf('password').hasError('minlength') && !mf('password').hasError('required')">
+          Please enter a valid password
+        </mat-error>
+        <mat-error *ngIf="mf('password').hasError('required')"> Password is <strong>required</strong> </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12 px-2 row mx-0 justify-content-between align-items-center mb-2">
+      <mat-checkbox class="mx-2" formControlName="rememberMe">Remember Me!</mat-checkbox>
+      <button type="button" mat-button class="mat-buttons c-violet mx-2 mb-2" (click)="goTo()">
+        <span>Signup</span>
+      </button>
+    </div>
+    <div class="text-center px-2 mb-2">
+      <button type="submit" mat-button class="mat-buttons saving mx-2 mb-2" (click)="login()">
+        <span>Login</span>
+      </button>
+    </div>
+  </form>
+</div>

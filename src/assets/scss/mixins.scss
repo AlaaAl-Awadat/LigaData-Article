@@ -1,0 +1,13 @@
+@mixin box-shadow($properties) {
+    -webkit-box-shadow: $properties;
+    -moz-box-shadow: $properties;
+    box-shadow: $properties;
+  }
+  @mixin animation($properties) {
+    -moz-animation: $properties;
+    -webkit-animation: $properties;
+    -ms-animation: $properties;
+    -o-animation: $properties;
+    animation: $properties;
+  }
+  
