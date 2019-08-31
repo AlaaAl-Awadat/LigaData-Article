@@ -8,7 +8,7 @@ run on cmd command "npm install" to download packages.
 the cmd url must contain last file path where package.json file saved.
 
 ## To Start
-to Start Project run on cmd command "ng serve" to project last path.
+to Start Project run on cmd command "ng serve -o" to project last path.
 to Start unit test run on cmd command "ng test" to project last path.
 the cmd url must contain last file path where package.json file saved.
 
