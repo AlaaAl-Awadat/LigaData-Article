@@ -1,6 +1,10 @@
+
 # ArticlesManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+## Befor Start
+run on cmd compand "npm install" to download packages.
+the cmd url must contain last file path where package.json file saved.
 
 ## Development server
 
